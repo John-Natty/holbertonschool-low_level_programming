@@ -6,26 +6,18 @@
  */
 int main(void)
 {
-	int a = 0;
-	int b;
+	int b = 0;
 
-	while (a <= 8)
+	while (b <= 9)
 	{
-		b = a + 1;
-		while (b <= 9)
+		putchar(b + '0');
+
+		if (b != 9)
 		{
-			putchar(a + '0');
-			putchar(b + '0');
-
-			if (a != 8 || b != 9)
-			{
-				putchar(',');
-				putchar(' ');
-			}
-
-			b++;
+			putchar(',');
 		}
-		a++;
+
+		b++;
 	}
 
 	putchar('\n');
