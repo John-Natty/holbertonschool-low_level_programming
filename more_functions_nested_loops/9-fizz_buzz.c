@@ -28,7 +28,7 @@ void fizz_buzz(void)
 	printf("\n");
 }
 
-int main(void)
+int main(void);
 {
 	fizz_buzz();
 	return (0);
