@@ -1,35 +1,35 @@
 #include <stdio.h>
-#include "main.h"
+#include "holberton.h"
+#include <stdio.h>
+
 /**
- * fizz_buzz - prints the numbers from 1 to 100, followed by a new line
- * For multiples of three print Fizz instead of the number
- * For multiples of five print Buzz instead of the number
- * For numbers which are multiples of both three and five print FizzBuzz
- * Return: void
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
  */
-void fizz_buzz(void)
+int main(void)
 {
-	int i;
+	int a;
 
-	for (i = 1; i <= 100; i++)
+	for (a = 1; a <= 100; a++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
+		if (a % 3 == 0 && a % 5 == 0)
+		{
 			printf("FizzBuzz");
-		else if (i % 3 == 0)
+		}
+		else if (a % 3 == 0)
+		{
 			printf("Fizz");
-		else if (i % 5 == 0)
+		}
+		else if (a % 5 == 0)
+		{
 			printf("Buzz");
+		}
 		else
-			printf("%d", i);
-
-		if (i != 100)
+			printf("%d", a);
+		if (a != 100)
 			printf(" ");
 	}
 	printf("\n");
-}
-
-int main(void);
-{
-	fizz_buzz();
 	return (0);
 }
