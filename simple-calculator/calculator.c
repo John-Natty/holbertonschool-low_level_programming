@@ -5,6 +5,7 @@
  * int add(int A, int B) - performs addition of A and B.
  * int subtract(int A, int B) - performs subtraction of A and B.
  * int multiply(int A, int B) - performs multiplication of A and B.
+ * int divide(int A, int B) - performs division of A and B.
  * readInput - Reads two integer operands from the user.
  * @A: pointer to the first operand (updated by the function)
  * @B: pointer to the second operand (updated by the function)
@@ -14,6 +15,7 @@ void readInput(int *A, int *B);
 int add(int A, int B);
 int subtract(int A, int B);
 int multiply(int A, int B);
+int divide(int A, int B);
 
 int main(void)
 {	int choiceMenu, A, B, Result;
@@ -32,7 +34,7 @@ int main(void)
 		{
 			printf("Invalid choice\n");
 		}
-		else if (choiceMenu == 1 || choiceMenu == 2 || choiceMenu == 3)
+		else if (choiceMenu >= 1 && choiceMenu <= 4)
 		{
 			readInput(&A, &B);
 			if (choiceMenu == 1)
@@ -46,6 +48,10 @@ int main(void)
 			else if (choiceMenu == 3)
 			{
 				Result = multiply(A, B);
+			}
+			else if (choiceMenu == 4)
+			{
+				Result = divide(A, B);
 			}
 			printf("Result: %d\n", Result);
 		}
@@ -93,4 +99,19 @@ int subtract(int A, int B)
 int multiply(int A, int B)
 {
 	return (A * B);
+}
+/**
+ * divide - performs division of A and B.
+ * @A: first operand
+ * @B: second operand
+ * Return: the quotient of A and B, or 0 if division by zero occurs
+ */
+int divide(int A, int B)
+{
+	if (B == 0)
+	{
+		printf("Error: division by zero\n");
+		return (0);
+	}
+	return (A / B);
 }
