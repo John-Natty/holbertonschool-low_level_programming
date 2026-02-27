@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int choiceMenu;
+	int choiceMenu, A, B, Result;
 
 	printf("Simple Calculator\n");
 	while (1)
@@ -25,6 +25,15 @@ int main(void)
 		else if (choiceMenu < 0 || choiceMenu > 4)
 		{
 			printf("Invalid choice\n");
+		}
+		else if (choiceMenu == 1)
+		{
+			printf("A:");
+			scanf("%d", &A);
+			printf("B:");
+			scanf("%d", &B);
+			Result = A + B;
+			printf("Result: %d\n", Result);
 		}
 	}
 	return (0);
