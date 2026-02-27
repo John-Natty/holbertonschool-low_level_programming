@@ -5,12 +5,27 @@
  */
 int main(void)
 {
-	printf("Welcome to the simple calculator!\n");
-	printf("Enter an addition\n");
-	printf("Enter a subtraction\n");
-	printf("Enter a multiplication\n");
-	printf("Enter a division\n");
-	printf("Quit\n");
-	printf("Bye Bye !\n");
+	int choiceMenu;
+
+	printf("Simple Calculator\n");
+	while (1)
+	{
+		printf("1) Add\n");
+		printf("2) Subtract\n");
+		printf("3) Multiply\n");
+		printf("4) Divide\n");
+		printf("0) Quit\n");
+		printf("Choice:");
+		scanf("%d", &choiceMenu);
+		if (choiceMenu == 0)
+		{
+			printf("Bye!\n");
+			break;
+		}
+		else if (choiceMenu < 0 || choiceMenu > 4)
+		{
+			printf("Invalid choice\n");
+		}
+	}
 	return (0);
 }
