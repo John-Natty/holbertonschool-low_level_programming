@@ -1,16 +1,16 @@
 Naive algorithm result: 625025000  
-Naive algorithm time: 1.779115 seconds
-Single-pass algorithm result: 25000
+Naive algorithm time: 1.779115 seconds  
+Single-pass algorithm result: 25000  
 Single-pass algorithm time: 0.000067 seconds
 
-Naive algorithm result: 625025000
-Naive algorithm time: 1.770545 seconds
-Single-pass algorithm result: 25000
+Naive algorithm result: 625025000  
+Naive algorithm time: 1.770545 seconds  
+Single-pass algorithm result: 25000  
 Single-pass algorithm time: 0.000067 seconds
 
-Naive algorithm result: 625025000
-Naive algorithm time: 1.753585 seconds
-Single-pass algorithm result: 25000
+Naive algorithm result: 625025000  
+Naive algorithm time: 1.753585 seconds  
+Single-pass algorithm result: 25000  
 Single-pass algorithm time: 0.000065 seconds
 
 
