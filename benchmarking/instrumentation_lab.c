@@ -52,45 +52,46 @@ static unsigned long reduce_checksum(void)
 
 int main(void)
 {
-	unsigned long checksum;
-	clock_t start_total;
-	clock_t end_total;
-	clock_t start_build;
-	clock_t end_build;
-	clock_t start_process;
-	clock_t end_process;
-	clock_t start_reduce;
-	clock_t end_reduce;
-	
-	start_total = clock();
+    unsigned long checksum;
+    clock_t start_total;
+    clock_t end_total;
+    clock_t start_build;
+    clock_t end_build;
+    clock_t start_process;
+    clock_t end_process;
+    clock_t start_reduce;
+    clock_t end_reduce;
 
-	start_build = clock();
-	build_dataset();
-	end_build = clock();
+    start_total = clock();
 
-	start_process = clock();
-	process_dataset();
-	end_process = clock();
+    start_build = clock();
+    build_dataset();
+    end_build = clock();
 
-	start_reduce = clock();
-	checksum = reduce_checksum();
-	end_reduce = clock();
+    start_process = clock();
+    process_dataset();
+    end_process = clock();
 
-	end_total = clock();
+    start_reduce = clock();
+    checksum = reduce_checksum();
+    end_reduce = clock();
+
+    end_total = clock();
 
     if (checksum == 0ul)
-	{
-        return 1;
-	}
+        return (1);
 
-	printf("Total execution time: %.6f seconds\n",
-		   (double)(end_total - start_total) / (double)CLOCKS_PER_SEC);
-	printf("Build dataset time: %.6f seconds\n",
-		   (double)(end_build - start_build) / (double)CLOCKS_PER_SEC);
-	printf("Process dataset time: %.6f seconds\n",
-		   (double)(end_process - start_process) / (double)CLOCKS_PER_SEC);
-	printf("Reduce checksum time: %.6f seconds\n",
-		   (double)(end_reduce - start_reduce) / (double)CLOCKS_PER_SEC);
+    printf("TOTAL seconds: %.6f\n",
+        (double)(end_total - start_total) / (double)CLOCKS_PER_SEC);
 
-	return 0;
+    printf("BUILD_DATA seconds: %.6f\n",
+        (double)(end_build - start_build) / (double)CLOCKS_PER_SEC);
+
+    printf("PROCESS seconds: %.6f\n",
+        (double)(end_process - start_process) / (double)CLOCKS_PER_SEC);
+
+    printf("REDUCE seconds: %.6f\n",
+        (double)(end_reduce - start_reduce) / (double)CLOCKS_PER_SEC);
+
+    return (0);
 }
