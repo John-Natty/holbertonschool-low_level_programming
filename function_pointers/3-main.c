@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
 /**
@@ -15,12 +14,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		printf("Error\n");
 		exit(98);
 	}
 
@@ -30,23 +24,13 @@ int main(int argc, char *argv[])
 
 	if (f == NULL)
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		printf("Error\n");
 		exit(99);
 	}
 
 	if ((argv[2][0] == '/' && b == 0) || (argv[2][0] == '%' && b == 0))
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		printf("Error\n");
 		exit(100);
 	}
 
