@@ -15,10 +15,10 @@ void readInput(int *A, int *B);
 int add(int A, int B);
 int subtract(int A, int B);
 int multiply(int A, int B);
-int divide(int A, int B);
+int divide(int A, int B, int *error);
 
 int main(void)
-{	int choiceMenu, A, B, Result;
+{	int choiceMenu, A, B, Result, error;
 
 	printf("Simple Calculator\n");
 	while (1)
@@ -51,7 +51,12 @@ int main(void)
 			}
 			else if (choiceMenu == 4)
 			{
-				Result = divide(A, B);
+				Result = divide(A, B, &error);
+				if (error)
+				{
+					printf("Error: division by zero\n");
+					continue;
+				}
 			}
 			printf("Result: %d\n", Result);
 		}
@@ -104,14 +109,17 @@ int multiply(int A, int B)
  * divide - performs division of A and B.
  * @A: first operand
  * @B: second operand
+ * @error: pointer to an integer that will be set to 1 if
+ * division by zero occurs, otherwise set to 0
  * Return: the quotient of A and B, or 0 if division by zero occurs
  */
-int divide(int A, int B)
+int divide(int A, int B, int *error)
 {
 	if (B == 0)
 	{
-		printf("Error: division by zero\n");
+		*error = 1;
 		return (0);
 	}
+	*error = 0;
 	return (A / B);
 }
